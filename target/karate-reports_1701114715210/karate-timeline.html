@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/petStore\/PetStore[1:3]","start":1701114562152,"end":1701114564148,"title":"src\/test\/java\/examples\/petStore\/PetStore[1:3] 14:49:22.152-14:49:24.148 Crear un Usuario"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/petStore\/PetStore[2:23]","start":1701114564160,"end":1701114564453,"title":"src\/test\/java\/examples\/petStore\/PetStore[2:23] 14:49:24.160-14:49:24.453 Buscar el usuario creado ingresado previamente (Búsqueda por username)"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/petStore\/PetStore[3:31]","start":1701114564463,"end":1701114564707,"title":"src\/test\/java\/examples\/petStore\/PetStore[3:31] 14:49:24.463-14:49:24.707 Actualizar el nombre y el correo del usuario"},{"id":4,"group":1,"content":"src\/test\/java\/examples\/petStore\/PetStore[4:51]","start":1701114564718,"end":1701114564961,"title":"src\/test\/java\/examples\/petStore\/PetStore[4:51] 14:49:24.718-14:49:24.961 Consultar la mascota modificada por estatus (Búsqueda por estatus)","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
