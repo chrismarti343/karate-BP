@@ -48,7 +48,7 @@ Feature: Sample API Test
     * print response
     Then status 200
 
-  Scenario: Consultar la mascota modificada por estatus (Búsqueda por estatus)
+  Scenario: Buscar el usuario actualizado (Búsqueda por username)
     Given url 'https://petstore.swagger.io/v2/user/chrismarti'
     When method GET
     Then status 200
@@ -56,5 +56,6 @@ Feature: Sample API Test
     And match response.email == 'testing2@gmail.com'
     And match response.firstName == 'Josue'
     * print response
+
 
 
